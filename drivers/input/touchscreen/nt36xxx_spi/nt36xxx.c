@@ -3169,12 +3169,8 @@ static struct spi_driver nvt_spi_driver = {
 	.driver = {
 		.name	= NVT_SPI_NAME,
 		.owner	= THIS_MODULE,
-#ifdef CONFIG_PM
-		.pm = &nvt_dev_pm_ops,
-#endif
-#ifdef CONFIG_OF
 		.of_match_table = nvt_match_table,
-#endif
+		.probe_type = PROBE_PREFER_ASYNCHRONOUS,
 	},
 };
 
