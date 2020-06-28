@@ -31,8 +31,7 @@
 			qcom,supply-max-voltage = <1904000>;
 			qcom,supply-enable-load = <32000>;
 			qcom,supply-disable-load = <80>;
-			qcom,supply-post-on-sleep = <1>;
-			qcom,supply-pre-off-sleep = <15>;
+			qcom,supply-post-on-sleep = <20>;
 		};
 
 		qcom,panel-supply-entry@1 {
@@ -43,7 +42,6 @@
 			qcom,supply-enable-load = <100000>;
 			qcom,supply-disable-load = <100>;
 			qcom,supply-pre-off-sleep = <10>;
-			qcom,supply-post-on-sleep = <3>;
 		};
 
 		qcom,panel-supply-entry@2 {
@@ -53,7 +51,7 @@
 			qcom,supply-max-voltage = <6000000>;
 			qcom,supply-enable-load = <100000>;
 			qcom,supply-disable-load = <100>;
-			qcom,supply-pre-off-sleep = <4>;
+			qcom,supply-post-on-sleep = <20>;
 		};
 	};
 
@@ -100,9 +98,7 @@
 
 		qcom,dsi-ctrl-num = <0>;
 		qcom,dsi-phy-num = <0>;
-		qcom,dsi-select-clocks = "mux_byte_clk0", "mux_pixel_clk0",
-				"src_byte_clk0", "src_pixel_clk0",
-				"shadow_byte_clk0", "shadow_pixel_clk0";
+		qcom,dsi-select-clocks = "mux_byte_clk0", "mux_pixel_clk0";
 
 		qcom,dsi-panel = <&dsi_rm69299_visionox_amoled_video>;
 	};
@@ -155,9 +151,7 @@
 
 		qcom,dsi-ctrl-num = <0>;
 		qcom,dsi-phy-num = <0>;
-		qcom,dsi-select-clocks = "mux_byte_clk0", "mux_pixel_clk0",
-			"src_byte_clk0", "src_pixel_clk0",
-			"shadow_byte_clk0", "shadow_pixel_clk0";
+		qcom,dsi-select-clocks = "mux_byte_clk0", "mux_pixel_clk0";
 
 		qcom,dsi-panel = <&dsi_ft8756_huaxing_video>;
 	};
