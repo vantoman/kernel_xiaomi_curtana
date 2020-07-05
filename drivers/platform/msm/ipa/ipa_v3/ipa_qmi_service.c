@@ -1,4 +1,4 @@
-/* Copyright (c) 2013-2019, The Linux Foundation. All rights reserved.
+/* Copyright (c) 2013-2020, The Linux Foundation. All rights reserved.
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License version 2 and
@@ -601,10 +601,10 @@ static int ipa3_qmi_init_modem_send_sync_msg(void)
 	}
 	req.hw_stats_quota_base_addr_valid = true;
 	req.hw_stats_quota_base_addr =
-		IPA_MEM_PART(stats_quota_ofst) + smem_restr_bytes;
+		IPA_MEM_PART(stats_quota_q6_ofst) + smem_restr_bytes;
 
 	req.hw_stats_quota_size_valid = true;
-	req.hw_stats_quota_size = IPA_MEM_PART(stats_quota_size);
+	req.hw_stats_quota_size = IPA_MEM_PART(stats_quota_q6_size);
 
 	req.hw_drop_stats_base_addr_valid = true;
 	req.hw_drop_stats_base_addr =
@@ -2338,7 +2338,7 @@ int ipa3_qmi_send_mhi_cleanup_request(struct ipa_mhi_cleanup_req_msg_v01 *req)
 		resp.resp.error, "ipa_mhi_cleanup_req_msg");
 }
 
-int ipa3_qmi_send_rsc_pipe_indication(
+int ipa3_qmi_send_endp_desc_indication(
 	struct ipa_endp_desc_indication_msg_v01 *req)
 {
 	IPAWANDBG("Sending QMI_IPA_ENDP_DESC_INDICATION_V01\n");
